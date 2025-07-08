@@ -81,343 +81,601 @@
             100% { transform: translateY(-200px) translateX(-200px); }
         }
         
-        /* Enhanced Navigation */
-        .navbar {
-            background: var(--gradient-dark) !important;
-            backdrop-filter: blur(20px);
-            border-bottom: 2px solid var(--accent);
-            box-shadow: 0 8px 32px var(--shadow);
-            padding: 1rem 0;
-            transition: all 0.3s ease;
-        }
-        
-        .navbar-brand {
-            font-family: 'Cinzel', serif;
-            font-weight: 700;
-            font-size: 2rem;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-shadow: 0 0 30px rgba(229, 9, 20, 0.5);
-            transition: all 0.3s ease;
-        }
-        
-        .navbar-brand:hover {
-            transform: scale(1.05);
-            filter: drop-shadow(0 0 10px rgba(229, 9, 20, 0.8));
-        }
-        
-        .nav-link {
-            color: var(--text-primary) !important;
-            font-weight: 500;
-            padding: 0.5rem 1rem !important;
-            margin: 0 0.25rem;
-            border-radius: 25px;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .nav-link::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: var(--gradient-primary);
-            transition: all 0.3s ease;
-            z-index: -1;
-        }
-        
-        .nav-link:hover::before {
-            left: 0;
-        }
-        
-        .nav-link:hover {
-            color: white !important;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(229, 9, 20, 0.3);
-        }
-        
-        /* Enhanced Cards */
-        .card {
-            background: var(--bg-card) !important;
-            border: 1px solid rgba(255, 255, 255, 0.1) !important;
-            border-radius: 20px !important;
-            backdrop-filter: blur(20px);
-            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-            overflow: hidden;
-            position: relative;
-        }
-        
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, transparent, rgba(229, 9, 20, 0.1), transparent);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            pointer-events: none;
-        }
-        
-        .card:hover::before {
-            opacity: 1;
-        }
-        
-        .card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 
-                0 20px 40px var(--shadow),
-                0 0 0 1px rgba(229, 9, 20, 0.3),
-                inset 0 0 0 1px rgba(255, 255, 255, 0.1);
-        }
-        
-        /* Movie Card Enhancements */
-        .movie-card {
-            height: 100%;
-            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-        }
-        
-        .movie-poster-container {
-            position: relative;
-            overflow: hidden;
-            border-radius: 20px 20px 0 0;
-            background: linear-gradient(45deg, #1a1a1a, #2a2a2a);
-        }
-        
-        .movie-poster {
-            width: 100%;
-            height: 350px;
-            object-fit: cover;
-            transition: all 0.4s ease;
-        }
-        
-        .movie-card:hover .movie-poster {
-            transform: scale(1.1);
-            filter: brightness(1.2) contrast(1.1);
-        }
-        
-        /* Status Badge Animations */
-        .status-badge {
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(229, 9, 20, 0.7); }
-            70% { box-shadow: 0 0 0 10px rgba(229, 9, 20, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(229, 9, 20, 0); }
-        }
-        
-        /* Enhanced Buttons */
-        .btn {
-            font-weight: 600;
-            border-radius: 25px;
-            padding: 0.75rem 2rem;
-            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-            position: relative;
-            overflow: hidden;
-            border: none;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: all 0.6s;
-        }
-        
-        .btn:hover::before {
-            left: 100%;
-        }
-        
-        .btn-primary {
-            background: var(--gradient-primary);
-            color: white;
-            box-shadow: 0 4px 15px rgba(229, 9, 20, 0.3);
-        }
-        
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(229, 9, 20, 0.4);
-            background: linear-gradient(135deg, #f40612 0%, #ff1525 100%);
-        }
-        
-        .btn-secondary {
-            background: linear-gradient(135deg, #6c757d 0%, #495057 100%);
-            color: white;
-        }
-        
-        .btn-secondary:hover {
-            transform: translateY(-3px);
-            background: linear-gradient(135deg, #495057 0%, #343a40 100%);
-        }
-        
-        /* Statistics Cards */
-        .stats-card {
-            background: var(--gradient-dark);
-            border: 1px solid rgba(229, 9, 20, 0.3);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .stats-card::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: var(--gradient-primary);
-        }
-        
-        .stats-number {
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-weight: 800;
-            text-shadow: 0 0 30px rgba(229, 9, 20, 0.5);
-        }
-        
-        /* Form Enhancements */
-        .form-control, .form-select {
-            background: rgba(37, 37, 37, 0.8) !important;
-            border: 2px solid rgba(255, 255, 255, 0.1) !important;
-            border-radius: 15px !important;
-            color: var(--text-primary) !important;
-            padding: 1rem !important;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-        }
-        
-        .form-control:focus, .form-select:focus {
-            background: rgba(37, 37, 37, 0.9) !important;
-            border-color: var(--accent) !important;
-            box-shadow: 0 0 0 0.2rem rgba(229, 9, 20, 0.25) !important;
-            transform: translateY(-2px);
-        }
-        
-        .form-label {
-            color: var(--text-primary) !important;
-            font-weight: 600;
-            margin-bottom: 0.75rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        /* Alert Enhancements */
-        .alert {
-            border: none;
-            border-radius: 15px;
-            backdrop-filter: blur(20px);
-            border-left: 4px solid;
-            animation: slideInDown 0.5s ease;
-        }
-        
-        @keyframes slideInDown {
-            from { transform: translateY(-100%); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-        
-        .alert-success {
-            background: rgba(40, 167, 69, 0.1);
-            border-left-color: var(--success);
-            color: #d4edda;
-        }
-        
-        .alert-danger {
-            background: rgba(220, 53, 69, 0.1);
-            border-left-color: #dc3545;
-            color: #f8d7da;
-        }
-        
-        /* Icon Animations */
-        .material-icons-outlined, .material-symbols-outlined {
-            transition: all 0.3s ease;
-        }
-        
-        .btn:hover .material-icons-outlined,
-        .btn:hover .material-symbols-outlined {
-            transform: scale(1.2) rotate(5deg);
-        }
-        
-        /* Loading Animation */
-        .loading-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(15, 15, 15, 0.9);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            backdrop-filter: blur(10px);
-        }
-        
-        .loading-spinner {
-            width: 60px;
-            height: 60px;
-            border: 4px solid rgba(229, 9, 20, 0.3);
-            border-top: 4px solid var(--accent);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-        
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .navbar-brand {
-                font-size: 1.5rem;
-            }
-            
-            .movie-poster {
-                height: 280px;
-            }
-            
-            .btn {
-                padding: 0.5rem 1.5rem;
-                font-size: 0.9rem;
-            }
-        }
-        
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        
-        ::-webkit-scrollbar-track {
-            background: var(--bg-secondary);
-        }
-        
-        ::-webkit-scrollbar-thumb {
-            background: var(--gradient-primary);
-            border-radius: 4px;
-        }
-        
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--accent-hover);
-        }
+
+/* Enhanced Navigation */
+.navbar {
+    background: var(--gradient-dark) !important;
+    backdrop-filter: blur(20px);
+    border-bottom: 2px solid var(--accent);
+    box-shadow: 0 8px 32px var(--shadow);
+    padding: 1rem 0;
+    transition: all 0.3s ease;
+}
+
+.navbar-brand {
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    font-size: 2rem;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 30px rgba(229, 9, 20, 0.5);
+    transition: all 0.3s ease;
+}
+
+.navbar-brand:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 10px rgba(229, 9, 20, 0.8));
+}
+
+.nav-link {
+    color: var(--text-primary) !important;
+    font-weight: 500;
+    padding: 0.75rem 1rem !important;
+    margin: 0 0.25rem;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-primary);
+    transition: all 0.3s ease;
+    z-index: -1;
+}
+
+.nav-link:hover::before,
+.nav-link.active::before {
+    left: 0;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: white !important;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(229, 9, 20, 0.3);
+}
+
+.nav-link.active {
+    font-weight: 600;
+    background: rgba(229, 9, 20, 0.15) !important;
+    border: 1px solid rgba(229, 9, 20, 0.3);
+    color: var(--accent) !important;
+}
+
+/* User Avatar Styles */
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--gradient-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(229, 9, 20, 0.3);
+}
+
+.user-avatar-large {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--gradient-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(229, 9, 20, 0.4);
+}
+
+.user-avatar:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(229, 9, 20, 0.5);
+}
+
+.user-avatar .material-symbols-outlined,
+.user-avatar-large .material-symbols-outlined {
+    color: white;
+    font-size: 1.5rem;
+}
+
+.user-avatar-large .material-symbols-outlined {
+    font-size: 2rem;
+}
+
+/* User Info */
+.user-info {
+    text-align: left;
+}
+
+.user-name {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    display: block;
+    line-height: 1.2;
+}
+
+.user-role {
+    font-size: 0.75rem;
+    color: var(--text-secondary) !important;
+    font-weight: 400;
+}
+
+/* User Menu Trigger */
+.user-menu-trigger {
+    background: rgba(37, 37, 37, 0.3) !important;
+    border-radius: 50px !important;
+    padding: 0.5rem 1rem !important;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.user-menu-trigger:hover {
+    background: rgba(37, 37, 37, 0.6) !important;
+    border-color: rgba(229, 9, 20, 0.3);
+    transform: translateY(-2px);
+}
+
+.user-menu-trigger .material-symbols-outlined:last-child {
+    transition: transform 0.3s ease;
+}
+
+.user-menu-trigger[aria-expanded="true"] .material-symbols-outlined:last-child {
+    transform: rotate(180deg);
+}
+
+/* Enhanced Dropdown */
+.dropdown-menu {
+    background: var(--bg-card) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 15px !important;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 20px 40px var(--shadow), 0 0 0 1px rgba(229, 9, 20, 0.2);
+    margin-top: 0.5rem;
+    min-width: 220px;
+    animation: dropdownFadeIn 0.3s ease;
+}
+
+.user-dropdown {
+    background: var(--bg-card) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 20px !important;
+    backdrop-filter: blur(20px);
+    box-shadow: 
+        0 20px 40px var(--shadow), 
+        0 0 0 1px rgba(229, 9, 20, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    margin-top: 1rem;
+    min-width: 280px;
+    animation: dropdownSlideIn 0.3s ease;
+    overflow: hidden;
+}
+
+@keyframes dropdownFadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes dropdownSlideIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(-15px) scale(0.95); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0) scale(1); 
+    }
+}
+
+.dropdown-item {
+    color: var(--text-primary) !important;
+    padding: 0.85rem 1.5rem;
+    transition: all 0.3s ease;
+    border-radius: 12px;
+    margin: 0.25rem 0.75rem;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    position: relative;
+    overflow: hidden;
+}
+
+.dropdown-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-primary);
+    transition: all 0.3s ease;
+    z-index: -1;
+    opacity: 0.1;
+}
+
+.dropdown-item:hover::before {
+    left: 0;
+    opacity: 1;
+}
+
+.dropdown-item:hover {
+    background: transparent !important;
+    color: white !important;
+    transform: translateX(8px);
+    font-weight: 600;
+}
+
+.dropdown-item.logout-btn {
+    margin-top: 0.5rem;
+    border: 1px solid rgba(220, 53, 69, 0.3);
+}
+
+.dropdown-item.logout-btn::before {
+    background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+}
+
+.dropdown-item.logout-btn:hover {
+    color: white !important;
+    border-color: #dc3545;
+    box-shadow: 0 4px 12px rgba(220, 53, 69, 0.3);
+}
+
+.dropdown-item.text-danger:hover {
+    background: linear-gradient(135deg, #dc3545 0%, #c82333 100%) !important;
+}
+
+.dropdown-header {
+    color: var(--text-primary) !important;
+    font-weight: 600;
+    padding: 1.25rem 1.5rem 0.75rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(229, 9, 20, 0.05);
+    margin: 0;
+}
+
+.dropdown-header h6 {
+    color: var(--text-primary);
+    font-weight: 700;
+    margin: 0;
+}
+
+.dropdown-divider {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 0.75rem 0;
+    opacity: 1;
+}
+
+/* Enhanced Buttons */
+.btn {
+    font-weight: 600;
+    border-radius: 25px;
+    padding: 0.75rem 2rem;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    overflow: hidden;
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: all 0.6s;
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+.btn-primary {
+    background: var(--gradient-primary);
+    color: white;
+    box-shadow: 0 4px 15px rgba(229, 9, 20, 0.3);
+    border: 2px solid transparent;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(229, 9, 20, 0.4);
+    background: linear-gradient(135deg, #f40612 0%, #ff1525 100%);
+    color: white;
+}
+
+.btn-secondary {
+    background: linear-gradient(135deg, #6c757d 0%, #495057 100%);
+    color: white;
+    border: 2px solid transparent;
+}
+
+.btn-secondary:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(135deg, #495057 0%, #343a40 100%);
+    color: white;
+}
+
+.btn-outline-primary {
+    background: transparent;
+    color: var(--accent);
+    border: 2px solid var(--accent);
+}
+
+.btn-outline-primary:hover {
+    background: var(--gradient-primary);
+    color: white;
+    border-color: var(--accent);
+    transform: translateY(-2px);
+}
+
+.btn-danger {
+    background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+    color: white;
+}
+
+.btn-danger:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(220, 53, 69, 0.4);
+    color: white;
+}
+
+.btn-success {
+    background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+    color: white;
+}
+
+.btn-success:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(40, 167, 69, 0.4);
+    color: white;
+}
+
+/* Enhanced Form Controls */
+.form-control, .form-select {
+    background: rgba(37, 37, 37, 0.8) !important;
+    border: 2px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 15px !important;
+    color: var(--text-primary) !important;
+    padding: 1rem !important;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    font-size: 1rem;
+}
+
+.form-control:focus, .form-select:focus {
+    background: rgba(37, 37, 37, 0.9) !important;
+    border-color: var(--accent) !important;
+    box-shadow: 0 0 0 0.2rem rgba(229, 9, 20, 0.25) !important;
+    transform: translateY(-2px);
+}
+
+.form-label {
+    color: var(--text-primary) !important;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+}
+
+.input-group-text {
+    background: var(--bg-secondary) !important;
+    border-color: rgba(255,255,255,0.1) !important;
+    color: var(--text-secondary) !important;
+    border-radius: 15px 0 0 15px !important;
+}
+
+/* Enhanced Cards */
+.card {
+    background: var(--bg-card) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 20px !important;
+    backdrop-filter: blur(20px);
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    overflow: hidden;
+    position: relative;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent, rgba(229, 9, 20, 0.1), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 
+        0 20px 40px var(--shadow),
+        0 0 0 1px rgba(229, 9, 20, 0.3),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar-brand {
+        font-size: 1.5rem;
+    }
+    
+    .nav-link {
+        padding: 0.5rem !important;
+        margin: 0.1rem;
+        font-size: 0.9rem;
+    }
+    
+    .btn {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.8rem;
+    }
+    
+    .dropdown-menu {
+        min-width: 200px;
+    }
+    
+    .user-info {
+        display: none !important;
+    }
+    
+    .user-dropdown {
+        min-width: 250px;
+        margin-top: 0.5rem;
+    }
+    
+    .user-avatar {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .user-menu-trigger {
+        padding: 0.4rem 0.8rem !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar-nav {
+        padding: 1rem 0;
+    }
+    
+    .nav-link {
+        text-align: center;
+        margin: 0.25rem 0;
+        border-radius: 15px;
+    }
+    
+    .dropdown-menu {
+        position: static !important;
+        transform: none !important;
+        box-shadow: none;
+        border: none;
+        background: rgba(37, 37, 37, 0.9) !important;
+        margin: 1rem 0;
+    }
+    
+    .user-dropdown {
+        position: static !important;
+        transform: none !important;
+        box-shadow: none;
+        border: none;
+        background: rgba(37, 37, 37, 0.9) !important;
+        margin: 1rem 0;
+        border-radius: 15px;
+    }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--gradient-primary);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-hover);
+}
+
+/* Navbar Toggler Enhanced */
+.navbar-toggler {
+    border: none !important;
+    padding: 0.5rem;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.navbar-toggler:hover {
+    background: rgba(229, 9, 20, 0.1);
+    transform: scale(1.1);
+}
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 0.2rem rgba(229, 9, 20, 0.25);
+}
+
+/* Loading States */
+.btn:disabled {
+    opacity: 0.7;
+    transform: none !important;
+    cursor: not-allowed;
+}
+
+.btn.loading {
+    pointer-events: none;
+}
+
+/* Success/Error States */
+.is-valid {
+    border-color: #28a745 !important;
+}
+
+.is-invalid {
+    border-color: #dc3545 !important;
+}
+
+.valid-feedback, .invalid-feedback {
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 10px;
+}
+
+.valid-feedback {
+    background: rgba(40, 167, 69, 0.1);
+    color: #28a745;
+    border: 1px solid rgba(40, 167, 69, 0.3);
+}
+
+.invalid-feedback {
+    background: rgba(220, 53, 69, 0.1);
+    color: #dc3545;
+    border: 1px solid rgba(220, 53, 69, 0.3);
+}
+
+/* Logout confirmation animation */
+.logout-btn {
+    position: relative;
+}
+
+.logout-btn:active {
+    transform: scale(0.98);
+}
     </style>
     
     @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -437,65 +695,131 @@
             CineTrack
         </a>
         
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         
         <div class="collapse navbar-collapse" id="navbarNav">
             @auth
+                <!-- Left side navigation -->
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('movies.index') }}">
+                        <a class="nav-link {{ request()->routeIs('movies.index') ? 'active' : '' }}" 
+                           href="{{ route('movies.index') }}">
                             <span class="material-symbols-outlined me-1">dashboard</span>
-                            Dashboard
+                            My Movies
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('movies.create') }}">
+                        <a class="nav-link {{ request()->routeIs('movies.create') ? 'active' : '' }}" 
+                           href="{{ route('movies.create') }}">
                             <span class="material-symbols-outlined me-1">add_circle</span>
                             Add Movie
                         </a>
                     </li>
-                </ul>
-            @endauth
-            
-            <ul class="navbar-nav">
-                @auth
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                            <span class="material-symbols-outlined me-1">account_circle</span>
-                            {{ Auth::user()->name }}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('movies.index') }}?status=Pending">
+                            <span class="material-symbols-outlined me-1">schedule</span>
+                            Watchlist
                         </a>
-                        <ul class="dropdown-menu dropdown-menu-dark">
-                            <li><a class="dropdown-item" href="{{ route('profile.edit') }}">
-                                <span class="material-symbols-outlined me-2">settings</span>Profile
-                            </a></li>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('movies.index') }}?status=Watched">
+                            <span class="material-symbols-outlined me-1">check_circle</span>
+                            Watched
+                        </a>
+                    </li>
+                </ul>
+                
+                <!-- Right side user menu -->
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle d-flex align-items-center user-menu-trigger" 
+                           href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <div class="user-avatar me-2">
+                                <span class="material-symbols-outlined">account_circle</span>
+                            </div>
+                            <div class="user-info d-none d-md-block">
+                                <span class="user-name">{{ Auth::user()->name }}</span>
+                                <small class="user-role d-block text-muted">Movie Enthusiast</small>
+                            </div>
+                            <span class="material-symbols-outlined ms-2">expand_more</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end user-dropdown">
+                            <li>
+                                <div class="dropdown-header d-flex align-items-center">
+                                    <div class="user-avatar-large me-3">
+                                        <span class="material-symbols-outlined">account_circle</span>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-0">{{ Auth::user()->name }}</h6>
+                                        <small class="text-muted">{{ Auth::user()->email }}</small>
+                                    </div>
+                                </div>
+                            </li>
                             <li><hr class="dropdown-divider"></li>
                             <li>
-                                <form method="POST" action="{{ route('logout') }}">
+                                <a class="dropdown-item" href="{{ route('movies.index') }}">
+                                    <span class="material-symbols-outlined me-2">dashboard</span>
+                                    Dashboard
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="{{ route('movies.create') }}">
+                                    <span class="material-symbols-outlined me-2">add_circle</span>
+                                    Add New Movie
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="{{ route('profile.edit') }}">
+                                    <span class="material-symbols-outlined me-2">settings</span>
+                                    Profile Settings
+                                </a>
+                            </li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li>
+                                <a class="dropdown-item" href="{{ route('movies.index') }}?status=Watched">
+                                    <span class="material-symbols-outlined me-2">movie</span>
+                                    My Collection
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="{{ route('movies.index') }}?status=Pending">
+                                    <span class="material-symbols-outlined me-2">bookmark</span>
+                                    Watchlist
+                                </a>
+                            </li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li>
+                                <form method="POST" action="{{ route('logout') }}" class="d-inline">
                                     @csrf
-                                    <button type="submit" class="dropdown-item">
-                                        <span class="material-symbols-outlined me-2">logout</span>Logout
+                                    <button type="submit" class="dropdown-item logout-btn text-danger">
+                                        <span class="material-symbols-outlined me-2">logout</span>
+                                        Sign Out
                                     </button>
                                 </form>
                             </li>
                         </ul>
                     </li>
-                @else
+                </ul>
+            @else
+                <!-- Guest navigation -->
+                <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('login') }}">
                             <span class="material-symbols-outlined me-1">login</span>
-                            Login
+                            Sign In
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('register') }}">
+                        <a class="nav-link btn-outline-primary" href="{{ route('register') }}">
                             <span class="material-symbols-outlined me-1">person_add</span>
-                            Register
+                            Get Started
                         </a>
                     </li>
-                @endauth
-            </ul>
+                </ul>
+            @endauth
         </div>
     </div>
 </nav>
